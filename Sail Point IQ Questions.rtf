@@ -1,0 +1,1201 @@
+{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1033{\fonttbl{\f0\fnil\fcharset0 Calibri;}{\f1\fnil Calibri;}}
+{\colortbl ;\red0\green0\blue255;}
+{\*\generator Riched20 10.0.19041}\viewkind4\uc1 
+\pard\sa200\sl276\slmult1\f0\fs22\lang9\par
+{{\field{\*\fldinst{HYPERLINK https://chrisolive.me/sailpoint-iiq-the-buildmap-rule-revisited/ }}{\fldrslt{https://chrisolive.me/sailpoint-iiq-the-buildmap-rule-revisited/\ul0\cf0}}}}\f0\fs22\par
+SAILPOINTTPOINT\par
+raw questions\par
+- March 09, 2018\par
+1.What is cretfication ?\par
+2.What are certification in sailpoint ?\par
+Manager certification\par
+application owner certification\par
+entitlement owner certification\par
+advanced certification\par
+Role Membership\par
+Role composition\par
+Account Group Permissions\par
+Account Group Membership\par
+\par
+3.What are the lifecylce of certification ?\par
+  1.Staging period ?\par
+  2.Challenge period ?\par
+  3.Revocation period ?\par
+  4.Sign off period\par
+ \par
+4. is it possible to hold certification ?\par
+yes, challenging phase, user can challenge his access\par
+5. is it possible exclude certification for members ?\par
+yes, it is possible to sepecify the members from certification in advance certiification?\par
+6. What is rule ?\par
+Rule is nothing but it is bean shell script and this can be resuable.\par
+7. What is pre-iterate ?\par
+\par
+PreIterate Rule: This rule runs only once for the whole file before the records in the file are\par
+processed; it is available to address any file-management needs for the aggregation task.\par
+Common examples include unzipping the file, validating the file date before aggregating potentially stale data,\par
+building a local map of lookup data from a remote source which can be used in the aggregation\par
+process (more efficient than a remote lookup for each record), etc\par
+\par
+\par
+8. What is build map rule ?\par
+This rule offers an opportunity to perform data manipulation on the delimited file\par
+account data as it is read from the file. In the absence of a build map rule, IdentityIQ automatically\par
+takes the columns list and the data values in the current record of the file and builds a hashmap of\par
+name-value pairs (i.e. column - rowValue). If the record should be manipulated differently from that\par
+default, the build map rule can be used to control that behavior. This rule runs for each record in the\par
+file\par
+9. Customized rule ?\par
+  Build map rule for delimited file,SAP,Ldap.\par
+ \par
+10.Pre-deligation rule.\par
+if manager went leave. this rule is going to be run.\par
+11. What is access Managagment ?\par
+Providing secure access to resources through web browsers and mobile applications\par
+12.What is Role  and what is the use of Role ?\par
+it is cubling together of acccess on different system.\par
+Roles uses is as below:\par
+\f1\bullet  Categorize and manage users based on job function\par
+\bullet  Provide a translation between business and IT functions\par
+\bullet  Earsese the provisioning and the request process for new access\par
+\bullet  Simplify auditing and the access and certification proces\par
+\par
+13. What are Roles ?\par
+Rolesn are similar to Logical Applications in that they can encapsulate the entitlements needed to access \par
+enterprise applications\par
+\par
+1.Organization role(Can n't be requested)\par
+2.Business role(Can be requested)\par
+3.Entitlement role(Can be requested),\par
+4.IT role(Can n't be requested) ,\par
+\par
+14.Workflows\par
+\par
+15.Identity Mapping ?\par
+\par
+16.account mapping.\par
+Application -account mapping\par
+17.Entitlement\par
+18.Entitlement catlog\par
+19.What is managed attribute ?\par
+\par
+20.What is mitigation ?\par
+  if you want to provide expection\par
+\par
+21)\par
+22)How can we set limit for delete aggreation ?\par
+23)Identity refresh cube ?\par
+if you want to referesh Identities attributes of Identity Cube, we are going to do Identity Refresh Cube.\par
+ Update identity attributes from the identity account attributes and through calculations\par
+\par
+The Refresh Task is critical to finalizing data on the Identity Cubes. \par
+1)all entitlements are promoted from the Account Data to the Identity Cubes by the Refresh Task.\par
+2) policy violations and risk scores are calculated by the Refresh Task.\par
+Typically Aggregation Tasks are followed by a Refresh Task.\par
+different options in Identity Refresh:\par
+\par
+ \par
+24)\par
+\par
+25)Identity risk ? application risk ?\par
+\par
+26) What is service account and how you are going to represetnt ?\par
+\par
+The three main options for representing service accounts in IdentityIQ are:\par
+\par
+27. Attach the service account to account owner's identity\par
+28. Create a standalone identity cube for each service account\par
+29. Create a service identity cube for each resource (application) to hold all service accounts for the given resource\par
+\par
+30.How many ways, you can inialize variables in workflows.\par
+ Referenece,\par
+ String\par
+ Rule\par
+ Callmethod\par
+ Script\par
+\par
+31)How to debug the workflows ?\par
+<Variable initializer="true" input="true" name="trace"/>\par
+\par
+\par
+32) Enable logging (log files) for sailpoint\par
+)  Open file  .. \\identityiq\\WEB-INF\\classes\\log4j.properties\par
+2) Search for log4j.appender.file=org.apache.log4j.FileAppender\par
+3) uncomment (remove # symbol) for next 4 lines\par
+log4j.appender.file=org.apache.log4j.FileAppender\par
+log4j.appender.file.File=C:/trainingData/sailpointInstallables/logs/sailpoint.log\par
+log4j.appender.file.layout=org.apache.log4j.PatternLayout\par
+log4j.appender.file.layout.ConversionPattern=%d\{ISO8601\} %5p %t %c\{4\}:%L - %m%n\par
+\par
+  Search for. log4jrootLogger=warn,file and uncomment.\par
+  Go to end of the file and add the class against which you want to debug.\par
+  To find the class name - Go to debug page.\par
+  In object browser, provide object name as Application\par
+  provide your application name in search filter.\par
+  Open that application.\par
+  copy the class name mentioned against connector tag in app xml.\par
+  At the end of log4j.properties file\par
+append log4j.logger. connector class =trace/debug/info/all/warn (save the file)\par
+33) Go to debug page of sailpoint\par
+ From menue with name debug ----> logging option\par
+ Reload logging configuration.\par
+\par
+Logging is enabled.\par
+ \par
+34)How to set debug logger for logginer in sailpoint.\par
+\par
+import org.apache.log4j.Logger;\par
+import org.apache.log4j.Level;\par
+\par
+Logger log = Logger.getLogger("sailpoint.services.bshdemo");\par
+// TODO: Remove this forced log level set before checking in this Rule. \par
+log.setLevel(Level.DEBUG); \par
+\par
+log.debug("Hello logging world!");\par
+\par
+35)How to set Info logger for logginer in sailpoint.\par
+\par
+ Logger log = Logger.getLogger("sailpoint.services.bshdemo");\par
+// TODO: Remove this forced log level set before checking in this Rule. \par
+log.setLevel(Level.INFO); \par
+36) how to save identity object ?\par
+\par
+context.saveObject(id);\par
+context.commitTransaction();\par
+\par
+ \par
+37) What is Access Management?\par
+Ans - Managing the permission of an account through which the account gets some access on target system is called as access management.\par
+This is achieved in sailpoint by re-certification process.\par
+38) What is Roles?\par
+Clubbing together all permissions of an different target system into single entity to maintain permission in an efficient way is termed as Roles.\par
+39) What is Identity cube?\par
+The identity along with it all details like entitilement, history, policy, account etc is called as identity cube. It is a virtual 3 dimentional representation of an identity.\par
+40) What is Applicaiton onboarding?\par
+Configuring setting to connec to a target system to bring all accounts and permission from a target system is called as application onboarding.\par
+\par
+\par
+\par
+41)\par
+how many types extended attributes can increase in saailpoint  ?\par
+8 types of extended attributes can be increase\par
+1. AlertExtended.hbm\par
+2.ApplicationExtended.hbm\par
+3.BundleExtended.hbm\par
+4.CertificationItemExtended.hbm\par
+5.IdentityExtended.hbm\par
+6.LinkExtended.hbm\par
+7.ManagedAttributeExtended.hbm\par
+8.TargetExtended.hbm\par
+\par
+42) Extended attribute mappings for Identity.\par
+By default we will map 10 extended attributes, but this may be raised to\par
+a maximum of 20.\par
+\par
+Using ExtendedPropertyAccessor can add attributes beyond\par
+the limit of 20 and have meaningful names.\par
+\par
+\par
+Only the first five attributes are indexed, to provide\par
+an example of how to specify an index.  In a production deployment you\par
+will usually index most of the extended attributes since they are\par
+usually added for searching\par
+\par
+43) What are the paramters need to uncomment in iiq.properties file.\par
+\par
+Depending on the type of database being\par
+# used, you will need to do the following:\par
+#\par
+# 1) Uncomment the correct sessionFactory.hibernateProperties.hibernate.dialect\par
+#    and ensure that all other dialects are commented out.\par
+# 2) If using MS SQL Server, also uncomment the quartz properties:\par
+#    scheduler.quartzProperties.org.quartz.jobStore.driverDelegateClass and\par
+#    scheduler.quartzProperties.org.quartz.jobStore.selectWithLockSQL.\par
+\par
+\par
+44)\par
+IDENTITYIQ MANAGED DATASOURCES ONLY\par
+#\par
+# In addition to the steps above, if IdentityIQ is creating its own datasource\par
+# (ie - not using an application server managed datasource), you will need to\par
+# perform the following steps:\par
+#\par
+# 1) Modify dataSource.username and dataSource.password to include the username\par
+#    and password of the database user.  The password may be an encrypted using\par
+#    the "encrypt" command when running "iiq console".\par
+# 2) Configure the dataSource.url to connect to the database, and uncomment the\par
+#    appropriate dataSource.driverClassName.\par
+# 3) Optionally configure other connection pool settings.\par
+\par
+\par
+\par
+\par
+45) How many types of Roles can be created in Sailpoint.\par
+  IT, Business, Entitilemnt, Organization\par
+ \par
+  Business E  OT\par
+ \par
+46)\par
+\par
+57) What is role memebership certificaiton?\par
+certifying access of those people which are associated with a role is called as role memebership cert.\par
+58) What is role composition certification?\par
+Certifying the composition of a role, means certifying all permissions through which a role is combined is called as certification.\par
+\par
+59) What is application owner certification?\par
+certifying access of people associated with certain application is called as app owner cert.\par
+60) What is exclusion rule?\par
+Rule written to excluding some person from certification (access review ) process.\par
+61) What is nativeIdentity?\par
+Unique attribute through which an identity is identified. ex- employeeId.\par
+62) How we can represent an organization in Sailpoint?\par
+Using Roles. Can creaate roles for one organization.\par
+63) In case there is a new target system , how will you interact with that target system to get all records from it and do the governance for that target sytstem.\par
+Need to write a custom connector for that.\par
+64) What is lifecycle events?\par
+joiner, mover, leaver( process which shows that an identity is added to a firm, removed from a firm or their department gets changed).\par
+65) What is population and how it is used?\par
+population is grouping of identity based on search result. Like people working in same department. It is used in certification process.\par
+66) How population is created in sailpoint?\par
+Using Advanced analytics section, Need to search group of identity and the save that as population.\par
+\par
+68) What are different types of certification. Which all you have worked on?\par
+\par
+69) What is exclusion rule in certification\par
+\par
+70) What is predelegation rule.\par
+In case actual approver is absent, then the review is delegated to some other person. Rule written in  certification for this process is called as predelegation rule.\par
+71) Whether workflows can be called from certification or not?\par
+No.\par
+\par
+\par
+72)what is role based access control?\par
+Managing access of users using Roles in sailpoint is RBAC(Role Based Access Control)\par
+\par
+73)What is beanshell scripts?\par
+Scritping language introducced to write rules in java.Ref - {{\field{\*\fldinst{HYPERLINK http://www.beanshell.org/manual/syntax.html }}{\fldrslt{http://www.beanshell.org/manual/syntax.html\ul0\cf0}}}}\f1\fs22\par
+\par
+74)What can i do, when i have launched a certification, and after the certification I have taken a decision to remove a role from an Identity. But as soon as I click on revoke access, it should not get revoked , the access should persist for some day, Only after few days, the access should get revoked.\par
+There is a check box in certificaction configuration called as "Process revokes immediately". If this is checked the revokation occurs instantly, otherwise not.\par
+\par
+75) Have you done the SSO configuration? Tell me the steps and configuration?\par
+There is a section in Login configuration -->SSO configuration , where we need to write rule for SSO configuration.\par
+76) In case I have done some changes in target system, I want to find in audit whether the changes are made from target system or from sailpoint. What configuration i need to do?\par
+System setup --> audit configuration.\par
+77) How to write a custom task? Give all necessary steps which need to be done.\par
+covered in session.\par
+78) What are important tables of database for Sailpoint identityiq?\par
+spt_identity, spt_link, spt_bundle, spt_certification, spt_rule , spt_taskdefinition.\par
+79) What is ruleLibrary. What is the purpose of writing a rule library.\par
+Collection of small function in a single place is called as rule Library.\par
+\par
+80) What is Library in workflow?\par
+Libraries are class file which has some functions mentioned,, which can be used in a workflow to do some processings.\par
+\par
+81) When ever a user joins the firm, what all things is done in sailpoint for that. Waht all configuration required?\par
+lifecycle event --> joiner --> joining workflow\par
+\par
+82) What is nativechange type of life cycle event.\par
+if some change happen directly on target system, and we want to use some workflow to be triggered in sailpoint for that, we need to enable nativeCahange detection and configure nativechange event in lifecycle event.\par
+\par
+83) What is rule based life cycle event. How it is used?\par
+if an event need to be triggered base on some condition everytime, then Rule based life cycle event.\par
+84) What are capabilities in sailpoint identityiq?\par
+capabilities in sailpoint is used to restrict access of a user on user interface of saailpoint.\par
+\par
+84) What is  the differece between capabilities and roles?\par
+capabilities are used to restrict access of a user on menues of sailpoint, while roles are used to restrict access of a user on target system.\par
+\par
+85) What are approval items?\par
+When ever a request is made is sailpont, some approvals are created, which is sent to approver in form of approval items.\par
+\par
+86) What are different modes of approval?\par
+serial, parallel, parallel poll, serial poll, any\par
+87) How we can open a custom form in approval?\par
+Need to use sailpoint forms in step of workflow.\par
+\par
+88) Is there any difference between role mining and role engineering. If it is there what are them?\par
+No difference.\par
+89) What is role mininig? What are different approaches for role mining?\par
+top down\par
+bottom up.\par
+\par
+\par
+\par
+90)what kind of roles you have implemented?\par
+Ans) A role is a collection of entitlements or other roles that enables an identity to access resources and to perform certain operations within an organization. A simple role is a collection of entitlements defined within the context of a single system. I have involved in creating business and IT roles.\par
+91)what are componets required to configure LDAP and AD?\par
+Ans)\par
+92)if you are using application servers - weblogic and any applicaiton servers, we need to configure the JNDI name.\par
+APPLICATION SERVER MANAGED DATASOURCES ONLY\par
+#\par
+# In addition to the steps above, if IdentityIQ is using an application server\par
+# managed datasource, you will need to perform the following steps:\par
+#\par
+# 1) Configure the datasource in your application server.  This usually involves\par
+#    putting the JDBC driver jar file in a common location and configuring\par
+#    properties for your database connection and pool settings.  Consult the\par
+#    documentation for the application server for more information.  Also,\par
+#    ensure that the JDBC driver jar file is not in the WEB-INF\\lib directory\par
+#    of the IdentityIQ web application.\par
+# 2) Change jndiDataSource.jndiName to point to the location in JNDI in which\par
+#    the datasource is stored.\par
+# 3) Change configuredDataSource.targetBeanName to "jndiDataSource".\par
+\par
+\par
+93)What is logical application?\par
+Ans:Sometimes, we need to identify an \ldblquote application\rdblquote  and corresponding \ldblquote accounts\rdblquote  as something that spans one or more applications. Take an example whereby a web application uses a specific entitlement in Active Directory to define membership in an application. Any user who has this specific Active Directory entitlement has an \ldblquote account\rdblquote  on this application. This is an example of a Logical Application.\par
+94)What kind of custom tasks you build?\par
+Tasks perform periodic operations such as Aggregation,Identity Refresh,System Maintenance.It\rquote s possible and very common to write your own tasks.Please specify Custom task written by you.\par
+95)What are differnt phase in certification?\par
+Generation Phase,Active Phase,Challenge Phase,Sign Off Phase,Remediation\\Revocation Phase,End Phase\par
+96)How can we use forms?\par
+Forms are used to solicit user input in several areas of IdentityIQ. They are used with:\par
+a) Application and role provisioning policies\par
+b) Identity provisioning policies (only applicable for installations using Lifecycle Manager)\par
+c) Data entry and approvals in workflow steps\par
+d)Report filter specification\par
+97)what is Identity mapping?\par
+Ans)To configure identity attributes that are used by identifyiq\par
+98)What is account Mapping?\par
+Ans)To configure account  that are managed by identifyiq\par
+99)What is connector Rule?\par
+Connector Rules are used during aggregation from specific connectors, specifically DelimitedFile, JDBC, SAP and\par
+RuleBasedFileParser. Connector rules run before Aggregation rules in the aggregation process. These rules are\par
+used to:\par
+1)implement pre-processing of data\par
+2)implement post-processing of data\par
+3)manipulate, merge or otherwise transform the incoming data as it\rquote s being read\par
+100)What is assigned role and dectected role?\par
+101)What is rolemineing?\par
+ Role Mining is used to create roles based on specified criteria in an existing enterprise\par
+IdentityIQ separates role mining into the following categories:\par
+IT Role Mining\par
+Business Role Mining\par
+\par
+102) what different types of provisionings?\par
+Types of provisioning include:\par
+1. Automated provisioning \endash  Detecting new user record from the Authoritative Source or HR System and automatically provisioning those users with appropriate access on target applications.\par
+2. Self-service provisioning \endash  allows users to update their profile data and request an account or request an entitlement and manage their own passwords.\par
+3. Workflow-based provisioning \endash  gathers the required approvals from the designated approvers before granting a user access to an application or data.\par
+103)What is aggregation?\par
+Aggregation refers to the discovery and collection of information from the applications configured to work with IdentityIQ. For example, IdentityIQ uses an Identity Aggregation task to pull the values associated with the identity attributes specified during the configuration process from user accounts on the designated applications. That information is then used to create the foundation of the IdentityIQ Identity Cubes.\par
+104)What kind of certification you have involed so for?\par
+ Ans)  application owner cert, manager cert, entitlement, role memebership, role composition, Advanced etc\par
+105)What are the steps involved in sailpoint installation?\par
+a)StopTomcat\par
+b)Unzip and extract the IdentityIQ war file in ~/webapps folder.(jar \endash xvf identityiq.war)   \par
+c)Goto IIQ console and run ./iiq schema\par
+d)Login to DB and run corresponding script. For example,Run command for Mysql(source create_identityiq_tables.mysql)\par
+\par
+106) During the installation process which xml you need to load in IIQ.\par
+import inti.xml\par
+\par
+107) What is upgradation and how did you perform upgradation ?\par
+\par
+108) What kind of issues , have you faced in upgradation process ?\par
+\par
+109) What is patching and how you have performed in patching in sailpoint ?\par
+\par
+in Patching activity. we have three steps.\par
+1.extracting the jar file into right locations.\par
+2.executing the database script.\par
+3.run the iiq console task.\par
+110) What are comments do you use for patching activity ?\par
+\par
+111)Do you know Hibernate implementation?\par
+112)How to user import? Expalin\par
+113)By extendinng AbstractConnector ,we have implemented Open connector ? \par
+114)what kind of roles you have implemented?\par
+Ans) A role is a collection of entitlements or other roles that enables an identity to access resources and to perform certain operations within an organization. A simple role is a collection of entitlements defined within the context of a single system. I have involved in creating business and IT roles.\par
+115)what are componets required to configure LDAP and AD?\par
+Ans)\par
+\par
+116)How can we use forms?\par
+Forms are used to solicit user input in several areas of IdentityIQ. They are used with:\par
+a) Application and role provisioning policies\par
+b) Identity provisioning policies (only applicable for installations using Lifecycle Manager)\par
+c) Data entry and approvals in workflow steps\par
+d)Report filter specification\par
+117)what is Identity mapping?\par
+Ans)To configure identity attributes that are used by identifyiq\par
+118)What is account Mapping?\par
+Ans)To configure account  that are managed by identifyiq\par
+119)What is connector Rule?\par
+Connector Rules are used during aggregation from specific connectors, specifically DelimitedFile, JDBC, SAP and\par
+RuleBasedFileParser. Connector rules run before Aggregation rules in the aggregation process. These rules are\par
+used to:\par
+ implement pre-processing of data\par
+ implement post-processing of data\par
+manipulate, merge or otherwise transform the incoming data as it\rquote s being read\par
+110)What is assigned role and dectected role?\par
+111)What is rolemineing?\par
+Ans)IdentityIQ helps to identify role in organization by performing Role mining. Here we have two approaches.\par
+a)Top-Down approach.\par
+b)Bottom-Up approach.\par
+\par
+112) what different types of provisionings?\par
+Types of provisioning include:\par
+1. Automated provisioning \endash  Detecting new user record from the Authoritative Source or HR System and automatically provisioning those users with appropriate access on target applications.\par
+2. Self-service provisioning \endash  allows users to update their profile data and request an account or request an entitlement and manage their own passwords.\par
+3. Workflow-based provisioning \endash  gathers the required approvals from the designated approvers before granting a user access to an application or data.\par
+113)What is aggregation?\par
+Aggregation refers to the discovery and collection of information from the applications configured to work with IdentityIQ. For example, IdentityIQ uses an Identity Aggregation task to pull the values associated with the identity attributes specified during the configuration process from user accounts on the designated applications. That information is then used to create the foundation of the IdentityIQ Identity Cubes.\par
+114)What kind of certification you have involed so for?\par
+ Ans)  application owner cert, manager cert, entitlement, role memebership, role composition, Advanced etc\par
+115)What are the steps involved in sailpoint installation?\par
+a)StopTomcat\par
+b)Unzip and extract the IdentityIQ war file in ~/webapps folder.(jar \endash xvf identityiq.war)   \par
+c)Goto IIQ console and run ./iiq schema\par
+d)Login to DB and run corresponding script. For example,Run command for Mysql(source create_identityiq_tables.mysql)\par
+\par
+\par
+\par
+116)Do you know Hibernate implementation?\par
+117)How to user import? Expalin\par
+ \par
+118)Diffrence between work groups and populations?\par
+Groups \emdash  used to track accessibility, activity, and monitored risk by group membership. Risk scores are\par
+displayed on the Home Page. Groups are defined automatically by values assigned to identity attributes.\par
+\par
+Populations \emdash  are query based groups created from the results of searches run from the Identity Search\par
+page. Searches that result in interesting populations of identities can, optionally, be saved as populations\par
+for reuse within IdentityIQ.\par
+\par
+ Populations are similar to groups, except that they are driven off of multiple search criteria\par
+whereas Groups are statically defined based off a single Identity attribute.\par
+ These group themselves are not dynamic.   You must run the Refresh Groups task\par
+periodically to update them. Between runs of Refresh Groups, the groups themselves\par
+remain static, but the membership is always based off a dynamic query.\par
+\par
+Note: Populations are dynamic queries, so every time you view a population, you\par
+are viewing its current members at that point in time.\par
+\par
+119)How to trigger customworkflow?\par
+\par
+120)Any other way to trigger custom workflow?\par
+\par
+121)workflow modules?\par
+\par
+122)why do we need I services?\par
+\par
+123)Explain about your project?\par
+\par
+124)Diffrence between IT role and Bussiness role?\par
+\par
+125)Types of certifications?\par
+Manager certification\par
+application owner certification\par
+entitlement owner certification\par
+advanced certification\par
+\par
+126)Phases of certifications?\par
+\par
+127)What is scope in sailpoint?\par
+\par
+128)What did you write in provisining plan?\par
+\par
+129)Correlation and types?\par
+\par
+130)Why correlation rule?\par
+\par
+131)What is transition?\par
+In workflow, tranition decides flow of the work flow.\par
+\par
+132)Cloud modules?\par
+\par
+133)Can we use buildmap rule in AD?\par
+\par
+134)Manager transfer what type of approverls?\par
+\par
+135)Variables in workflow?\par
+String\par
+script\par
+rule\par
+call\par
+reference\par
+\par
+136.Promote managed attributes \par
+\par
+137.Detect deleted accounts ?\par
+ in case account is not exists in system the corresponding accounts going\par
+\par
+138)What is logical application?  *****\par
+\par
+Ans:Sometimes, we need to identify an \ldblquote application\rdblquote  and corresponding \ldblquote accounts\rdblquote  as something that spans one or more applications.\par
+Take an example whereby a web application uses a specific entitlement in Active Directory to define membership in an application. Any user who has this specific Active Directory entitlement has an \ldblquote account\rdblquote  on this application. This is an example of a Logical Application.\par
+\par
+140)What kind of custom tasks to build ?   *****\par
+Tasks perform periodic operations such as Aggregation,Identity Refresh,System Maintenance.\par
+\par
+141)What are differnt phase in certification?\par
+Generation Phase,\par
+Active Phase,\par
+Challenge Phase,\par
+Sign Off Phase,\par
+Remediation\\Revocation Phase,\par
+End Phase\par
+\par
+142)About life cycle events?\par
+Joiner\par
+mover\par
+leaver\par
+\par
+\par
+144)Buildmaprule and what did u write in beanshell?\par
+\par
+145)How provision works?\par
+\par
+146)Types of approvels?\par
+serial,serials-poll,parallel,parallel-poll,any\par
+147)Diffrence between customization and buildmap rule?\par
+Customization rule can connects.\par
+148)Role mining\par
+\par
+Role mining analyzes data in the system using pattern-matching algorithms.  You can use the results to help\par
+determine what new roles to create.. IdentityIQ supports role mining to create both business and IT roles. \par
+\par
+\bullet  "IT Role Mining" \par
+\bullet  "Business Role Mining" \par
+\par
+150)What is purpose of Perform maintenance ?\par
+Keeps standard systems moving through their phase this task run  every 5 mins.\par
+151) What is the purpose of Check expired mitigations daily ?\par
+Scans for policy & certification exceptions that have expired. this task runs every day\par
+152) What is the purpose of Check expired work items daily ?\par
+Scans for uncompleted workitems that have expired . this task run runs every day\par
+153) What is the purpose of the task Perform Identity Request Maintenance  ?\par
+Checks for provisioning completeness\par
+\par
+154)How to find out no of users login and log out failed in sailpoint.\par
+ In Advanced Analatiks report ,Select audit seach in that define class as loginFailure\par
+\par
+ 155)How many searches are available in Advanced Analatiks report?\par
+IdentitySearch\par
+AccessReviewSearch\par
+RoleSearch\par
+AccountGroupSearch\par
+ActivitySearch\par
+AuditSearch\par
+PrcessMetricsSearch\par
+SyslogSearch\par
+156)How many Standared attributes are there in Indentity Serach ?\par
+8\par
+157)How many Searchable Attributes are there by default?\par
+4\par
+158) What is Searchable Attributes and how to define them ?\par
+In System Settings ---> Identity Mapping. While defining Attribute. we are defining Searchable attributes ?\par
+\par
+159) Where is the Log4j.properties file exists in identifyiq.\par
+identityiq/WEB-INF/classes\par
+\par
+160) What is group factory ?\par
+\par
+161) What is multi-value field ?\par
+\par
+162) What is identity Attribute ?\par
+These fields define which attributes that we are reading in will be used to define uniqueness\par
+\par
+The Identity Attribute defines which attribute will\par
+be used to determine the uniqueness of the account.\par
+You could think of this as the primary key for the\par
+application accounts. In this case, we are using the\par
+\ldblquote User ID\rdblquote  which is unique for each user\par
+\par
+163) What is differene between Rule and Script ?\par
+ \par
+ \par
+164) What is Detect deleted accounts ?\par
+to sync up data between identityIQ and target sync.\par
+165) What is Disable optimization of unchanged accounts ?\par
+\par
+\par
+166) What is the use of move account in application accounts tab ?\par
+\par
+167)\par
+What is the name of the field you set for IdentityIQ to populate this attribute?\par
+\par
+DisplayAttribute ?\par
+\par
+What ever attribute you have set as DisplayAttribute,That attribute is going to appear as user id\par
+\bullet  Identifies which attribute holds display attribute\par
+\bullet  Used for friendly display name\par
+\par
+\par
+167) What is the difference between account mapping and identity mapping\par
+\par
+Specify the applications and rules from which account data is derived\par
+\par
+Specify the applications and rules from which identity data is derived.\par
+\par
+SAP HP\par
+======\par
+empid ,location,email\par
+\par
+table:-\par
+empid,accountstatus,\par
+\par
+\par
+\par
+168) What is Extended Identity Attributes ?\par
+\par
+We will now define and configure additional Identity Attributes. These are attributes specific to the\par
+implementation that are additional to the out of the box attributes. These attributes are called\par
+Extended Identity Attributes.\par
+\par
+\par
+169) By Default Multi-valued attributes are searchable ?\par
+\par
+Multi-valued attributes and all standard attributes are automatically searchable in\par
+IdentityIQ. They are not shown as searchable in the summary list because they do not count\par
+against your configured set of searchable attributes.\par
+\par
+170) What is applicatin rule and What is globale rule in Identity mappping ?\par
+\par
+\par
+171) if you want to use in account correlation which type of identity attributes, you need to specify ?\par
+Ans: A field should be marked as searchable and GroupFactory.\par
+\par
+ A field should be marked as searchable if you will need to use it for account correlation\par
+(like Employee ID) or for Analytics (Location, Region). Group Factory identifies\par
+those fields from which groups of users may be created (for example, a group of\par
+inactive users).\par
+\par
+172)  uncorrelated identifies ?\par
+\par
+\par
+173) What is authorative source ?\par
+\par
+174) What is links on Sailpoint ?\par
+Access on different servers.\par
+\par
+175) Un correlated Identity ?\par
+if an Identity don't have link with any authorated source application those identities are called as un correlated Identities ?\par
+\par
+176) What is the difference between Identity and account ?\par
+\par
+177) State Identity or orphan Identity in Sailpoint ?\par
+\par
+if any identifies don't have accounts those identities are called as orphan Identity or stale Identity ?\par
+\par
+178) What is prune Idenitity task ?\par
+ Manually correlate the accounts using the UI. This involves moving the uncorrelated\par
+account to the proper identity. once uncorrelated task is completed.to delete the orphan identites. we run the prun task.\par
+\par
+\par
+179) Which application identities automatically correlated identities ?\par
+\par
+Authoritative application identites automatically correlated identities\par
+\par
+180) Define correlation attributes for below given applications\par
+\par
+HR\par
+===\par
+Id,Fname,lastname,email \par
+Oracel Server\par
+=========\par
+id,position,manager \par
+\par
+SAP Server\par
+======\par
+username,email,dept\par
+\par
+Blog\par
+=====\par
+\par
+\par
+Ad Server:-\par
+SAMAccount,fullname,position,Manager,dept\par
+\par
+\par
+181) Which are applcations( correlation will be happend)\par
+\par
+correlation always happen betweeen correlation and non correlation applcations\par
+\par
+182)Correlation always happen which attributes ?\par
+\par
+Correlation always happen only Identities and account only\par
+\par
+\par
+183) What is use of correlation rule ?\par
+if you don't find common attributes between authorative application and non - authorative,then we need to define correlation rule to create correlation attribute.\par
+\par
+\par
+184)What is Manager correlation ?\par
+1.Define which application attribute defines a user\rquote s manager.\par
+2.Map the application attribute to the manager\rquote s Identity\par
+Attribute\par
+\par
+185)What is the difference betweeen Identity correlation and Manager correlation ?\par
+\par
+186)How to configure new Identity Attributes in identity clube\par
+\par
+1) Goto Debug mode 2)UI configuration 3) Serach for name: identityViewAttributes.\par
+ modify the <entry key="identityViewAttributes" value="name,firstname,lastname,email,manager"/>\par
+ <entry key="identityViewAttributes" value="name,firstname,lastname,email,manager,department,location,empId,region,jobtitle,costcenter,status"/>\par
+\par
+187)How to delete all indentities from IdentityIQ\par
+delete Identity *\par
+\par
+188) how to delete accounts for one specify application ?\par
+\par
+\par
+189) What is Instance Attribute ?  *****\par
+\par
+190)Customize the Identities page to include new Identity ?\par
+\par
+Add the following two lines to the entry for identityTableColumns and click Save\par
+<ColumnConfig dataIndex="status" headerKey="Status" hideable="true"\par
+property="status" sortProperty="status" sortable="true"/>\par
+<ColumnConfig dataIndex="correlated" headerKey="Authoritative?" hideable="true"\par
+property="correlated" sortProperty="correlated" sortable="true"/>\par
+\par
+191)if you define attributes are searchable,when you can find them as searchable attributes ?\par
+You can find them in advanced Analatiks, you can find them as searchable\par
+\par
+\par
+192)if you have loaded authorative applications, if you are loading non-authoritative accounts. what are things you need to take care ?\par
+\par
+\par
+When loading a non-authoritative application, it is necessary to correlate user accounts from this\par
+new application to existing Identity Cubes. We will do this by defining an Account Correlation\par
+configuration when configuring each application. Account Correlation can be configured as a simple\par
+attribute mapping or, for more complicated examples; we can implement Account Correlation as a\par
+rule. In this section we will use an attribute mapping to correlate accounts.\par
+193)What is orphan accounts ?\par
+(those accounts that cannot be linked to existing identity cubes)\par
+193)you have authorative source got loaded and you have loaded non-authoritative by applying correlation,but still you could see non linked accounts(orphan acccounts), how do you map them ?\par
+We need to do manually correlation ?\par
+\par
+194)To promote entitlement into Entitlement Catalog ?\par
+1) We need to configure attribute as Managed in the application schema,then particular values will be loaded into Entitlement catlog\par
+groupmbr  go loaded into Entitilemnt Catalog.\par
+\par
+We need to select Promote managed attributes in aggregation task ?\par
+\par
+\par
+\par
+195) What is the use of Data needs to be merged  in application on boarding ?\par
+\par
+196) How to skip starting 'n' of lines in file loading using delimiter connecor ?\par
+In File on boarding Filtering section. specify the no of lines to skipped while applicaiton onboarding.\par
+\par
+197) How to filer empty lines loading in file loading approach ?\par
+In File on boarding Filtering section. Check out the Filter Empty option\par
+198) How to ingore department value as manufacture in delimiter file.\par
+In File on boarding Filtering section. specify the Filter String.\par
+\par
+Filter String: Specify a filter string to ignore objects in the feed based on attribute values. For\par
+example, if all records with a department value of "Manufacturing" should be ignored, the Filter String\par
+would be specified as department == \\"Manufacturing\\". Details on filter string syntax can be found\par
+in the Filters and Filter Strings white paper on Compass.\par
+\par
+198)How to skip record loading if read starting with "#"\par
+In File on boarding Filtering section,Comment Character specify the special Character\par
+\par
+\bullet  Comment Character: Enter a comment character used in the data file. Any line starting with this\par
+character will be skipped.\par
+\par
+199)What is the use of  Revoker in application on boarding ?\par
+ select a user who will receive and process the manual work item to revoke an identity's\par
+access to this application when their access is revoked through IdentityIQ (through a certification,\par
+a Lifecycle Manager request, etc.). If no Revoker is specified, the application owner receives the\par
+revocation work item.n\par
+200) Which are connectors, we will specify Native Object Type other than account ?\par
+\par
+Applications using the LDAP connector, where it is "iNetOrgPerson"  but should be\par
+"account" for most application types, including delimited file\par
+\par
+201)What is PostIterate Rule and where exactly this rule being used ?\par
+\par
+PostIterate Rule: This rule runs once for the whole file after the records in the file are processed; it is\par
+available to address any post-aggregation file management needs for the task. Common examples\par
+include deleting or archiving the file, clearing the local map of lookup data, validating counts of\par
+records processed, etc.\par
+\par
+202) What is Map to ResourceObject Rule and where it is being used ?\par
+Like the build map rule, this is a rule hook available for data\par
+manipulation of the account data as each record is processed. This rule is run after any record\par
+merging configured for the application has occurred. Without a map to resourceObject rule present,\par
+IdentityIQ will automatically translate a record's hashmap representation into a resourceObject\par
+representation; this rule allows customers to manipulate data during that transformation process\par
+\par
+203)What are the Connector Rules ?\par
+1.Build Map Rule\par
+2.PreIterate Rule\par
+3.PostIterate Rule\par
+4.Map To ResourceObject Rule\par
+5.MergeMaps Rule\par
+\par
+\par
+\par
+204)What are the Aggregation Rules\par
+1)Correlation Rule\par
+2)Creation Rule\par
+3)Manager Correlation Rule\par
+4.Customization Rule\par
+5.Managed Entitlement Customization Rule\par
+\par
+\par
+\par
+204)What is difference between Connector Rules and Aggregation Rules ?\par
+\par
+Connector rules are being run during connecting application time  and Aggregation rules are being executing while running aggreation task.\par
+\par
+\par
+205)What is the use of clearCache command ?\par
+\par
+206)How to clear the pending emails queue ?\par
+\par
+\par
+207)What is the use of connectorDebug ?\par
+\par
+connectorDebug PAM iterate group\par
+\par
+208)If you want any attribute to be part of entitilement catalog. where do you need to specify attributes?\par
+\par
+In scheme, attributes section specify the column name as entitilement so that field will appear in entitilement catalog.\par
+\par
+209) What is  Delta Identity Refresh ?\par
+\par
+IdentityIQ version 7.0 introduces Delta Identity Refresh to IdentityIQ: the ability to perform identity refresh functions on only the identities which have recently changed/\par
+\par
+210) How many steps involved in Delta Identity Refresh setup.\par
+\par
+Delta Identity Refresh feature involves this two-step process:\par
+\par
+Configure and run aggregation tasks to mark identities as changed as they modify attribute or account data on the identities\par
+Configure and run identity refresh tasks to perform their functions only on the marked identities\par
+\par
+211) What is Multiplexing application ?\par
+ The application definition that points to the single source feed containing data for multiple resources\par
+\par
+212) Multiplexed applications:\par
+\par
+The application definitions representing the individual resources whose\par
+data is contained in the source feed; these are usually auto-generated during the aggregation\par
+process\par
+\par
+213) What is updateMultiplexedSchemas and where exactly this attribute being used ?\par
+\par
+214) What is logical application ?\par
+\par
+215) What are the reserved words for multiplexed application\par
+ IIQSourceApplication and IQMultiplexIdentity.\par
+\par
+216)What is differece between Multiplexed application and Logical applcations ?\par
+\par
+217) Similarities and Differences between roles and Logical applicatins\par
+\par
+Logical Applications and Roles have a number of similarities. \par
+\par
+Both are abstractions.\par
+\bullet  They provide a way to manage user access to critical applications and systems.\par
+\bullet  They can simplify the provisioning and certification processes by encapsulating entitlements and permissions in a single unit.\par
+\bullet  They can present entitlement data in a way that is more easily understood by non-technical reviewers.\par
+\par
+The primary differences between Logical Applications and Roles are:\par
+\par
+They provide different ways of modeling access. \par
+ Logical Applications are account-centric, while Roles are entitlement-centric.\par
+\bullet  Roles have an extended set of features not available to Logical Applications including:\par
+o Automated creation and management through role mining, entitlement analysis, impact \par
+analysis, role inheritance, and role archiving\par
+o Management through workflows that can create/update/delete roles, schedule role creation \par
+and decommissioning, and schedule role/entitlement assignment\par
+\bullet  Roles scale significantly better than Logical Applications.  Refer to the section titled Performance \par
+Impacts below for more details about the scalability of Logical Applications and Roles.\par
+\par
+\par
+218)If you want to refresh only one specific applicaiton identify cubes ?\par
+In Refresh cube, Filter string, you can specify the applicatin string based on that you can perform filtering the applications.\par
+219) What is the synonymous for account ?\par
+link is synonymous  to account.\par
+220) how to create custom Identity Refresh Cube ?\par
+In Monitor,Select the task and select the Identity Refresh Cube and specify the filter\par
+\par
+221) How to create custom tasks ?\par
+\par
+In Monitor tasks --> select the related task.\par
+\par
+\par
+222)Can you please describe about IIQ Disabled and where exactly this is being used ?\par
+\par
+223) What is Workgroups and where Workgroups can be used?\par
+\par
+\par
+224) What is Group Factory and Where it is being defined and where it is being used\par
+\par
+if you want to define group based on attribute for that attribute, you need to fine as Group factory.\par
+if you defined one attribute as group factory, automatically that pariticular field will appear in groups creation menu.\par
+\par
+225) What kind of visibilty is there for populations ?\par
+\par
+By default,populations are private. it can be visible only for created person.\par
+if you want to make it visibale make the population - un check private check box.\par
+\par
+226) What is policy ?\par
+\par
+Policies are defined and used to monitor identities that are in violation of the policies.\par
+\par
+\par
+227)how are you going to manage Policy violations ?\par
+Policy violations can be managed through certifications or the policy violations page\par
+You can also configure violations to trigger a business process to send email notifications and generate work items\par
+so that policy violations can be managed immediately upon detection\par
+\par
+228) Examples of Policies ?\par
+Separation of duties policy:-\par
+ a separation of duties policy can prohibit one identity from requesting and approving purchase orders.\par
+Activity policy:-\par
+\par
+An activity policy can prohibit an identity with the Human Resource role from\par
+updating the payroll application even though the identity has view access to the application.\par
+\par
+Rule violations for a policy:-\par
+\par
+Rule violations for a policy, when detected, are stored in the identity cube. These violations also appear on\par
+identity score cards and enable you to identify high-risk employees and take appropriate action.\par
+\par
+\par
+229)How many policies and describe them ?\par
+1.Custom Policies:\par
+ are any policies that were created outside of IdentityIQ to meet special needs of your\par
+enterprise. You cannot create a custom policy from inside the product. Use the Edit Policy page to view\par
+information about a custom policy, but changes made here will not affect the performance of the policy\par
+2.SOD\par
+ separation of duties policies ensure that identities are not assigned conflicting roles\par
+\par
+3.Entitlement SOD\par
+ separation of dutiesm  policies ensure that identities are not assigned conflicting\par
+entitlements\par
+4.Activity\par
+ ensure that users are not accessing sensitive application if they should not or when they\par
+should not.\par
+5.Account\par
+ ensure that an identity does not have multiple accounts on an application\par
+6. Risk\par
+ ensure that users are not exceeding the maximum risk threshold set for your enterprise.\par
+7.Advanced\par
+ custom policies created using match lists, filters, scripts, rules, or populations.\par
+To access Policies\par
+\par
+230) how are you handling policy violations ?\par
+\par
+go to manage and select policy violation\par
+231) What is Risk scoring ?\par
+\par
+232) How many types of Risk scores are available ?\par
+1.Base Risk Score\par
+The score assigned to each role, entitlement, or policy violation\par
+2.Total Base Risk Score\par
+The total score of all base risk scores of the same component type on a per user\par
+basis.\par
+3.Compensated Risk Score\par
+The value of the base risk score for a component multiplied by the compensating\par
+factor for that component type.\par
+4.Total Compensated Risk\par
+Score\par
+\par
+5.Composite Risk Score or\par
+Identity Risk Score\par
+\par
+233) What is the use of Refresh Group ?\par
+  once you have defined the groups. to get refersh identifies into correct groups. we need to run Refresh Groups ?\par
+ \par
+234) What is the use of Refresh Risk Scores?\par
+ once you have defined Risk score for relavent task. to get refresh identities . we need to run the Refresh Risk scores task\par
+235) Wat is the use of  Refresh Continuous Certification task ?\par
+ if an employee leaves the company and they are marked as inactive, the Refresh Continuous Certifications task removes them from the certification.\par
+ 236) types of Certification ?\par
+1 \bullet  Manager Certifications \emdash  certify that your direct reports have the entitlements they need to do their job\par
+and only the entitlements they need to do their job.\par
+ 2.Application Owner Certifications \emdash  certify that all identities accessing applications for which you are\par
+responsible have the proper entitlements.\par
+3.Entitlement Owner Certifications \emdash  certify that all identities accessing entitlements for which you are\par
+responsible are correct.\par
+4.Advanced Certifications \emdash  certify that all identities included in the population associated with that\par
+Advanced Certification have the correct entitlements and roles.\par
+ .\par
+5 Account Group Certifications \emdash  certify that account groups /application objects for which you are\par
+responsible have the proper permissions or the proper group membership. Account groups that do not\par
+have owners assigned are certified by the owner of the application on which they reside.\par
+6 Role Certifications \emdash  certify that roles for which you are responsible are composed of the proper roles\par
+and entitlements or that the roles are assigned to the correct identities.\par
+7 Identity Certifications \emdash  certify the entitlement information for the identities selected from the Identity\par
+Risk Score, Identity Search Results, or Policy Violation pages, usually for at risk users.\par
+8 Event-Based Certifications \emdash  certify the entitlement information for the identities selected based on\par
+events detected within IdentityIQ.\par
+\par
+237.What are the different kind of cerfications phase ?\par
+Active:\par
+\par
+\par
+Challenge:\par
+\par
+\par
+\par
+Revocation:\par
+\par
+End:\par
+\par
+9) how many ways assigned cerfications review can be completed.\par
+1. on sailpoint dashboard - access Review\par
+2. by selecting workitems. we can select the assigned work items to the manager\par
+\par
+238) What is Entitlement Catalog  and what it contains ?\par
+In this Entitlement Catalog, we will define Entitlement description,ownership is defined in the Entitlement Catalog.\par
+239) If there are things , you are configuraint offen ,where you can configure them to avoid configuring frequently ?\par
+in System setup (Gare buttion) --> Compliance manager. you can specify them.\par
+240)if user challenge his access. where certifier can see the user challenge ?\par
+in Certificer can see in acess Review page as with Star symbol. Certifier can handle the Challenge by right clicking?\par
+250)After user challenge this access what are the steps carried out by Certifier and IIQ ?\par
+1. if the Challenge is accepeted, the revoke decision on the challenge item is cleared.\par
+2. the certifier makes a new decision and save change.\par
+3. if that was only challenged decsion, IIQ promts the cerifier to sign of the access reveiew\par
+4.once sign off,Access Review is completed and moves to the next step.\par
+241)What is custom tasks ? how to create them ?\par
+In tasks, click new task and select what ever task you want to get created ,specify the options accordlingly.\par
+\par
+Rules:\par
+======\par
+\par
+251)how to get object name in rules ?\par
+\par
+Identity i=getObjectByName(Identity.class,"Gopu");\par
+\par
+252) how to get attributes of Identities ?\par
+\par
+Identity i=getObjectByName(Identity.class,"Gopu");\par
+253) Display all attributes of all Identity  of mappings of attributes ?\par
+ System.out.println("Attributes:   "+i.getAttributes());\par
+\par
+\par
+ 253) display one specific attribute of identity mapping attribute ?\par
+ Identity i=getObjectByName(Identity.class,"Gopu);\par
+ System.out.println("department:\\t"+i.getAttribute("department"));\par
+\par
+ 254)how do develop custom task?\par
+ 1) develop java files\par
+ 2. develop the Rule Runner Task in tasks.(monitor)\par
+\par
+ 255) to load the lcm manager.\par
+ > import init-lcm.xml\par
+\par
+\par
+ Idenitity i=new Identity(Identy.class,"");\par
+\par
+ 256) two types of UIrequests , batch tasks ?\par
+\par
+ Batch handles:\par
+ Workflows\par
+ Tasks/Reports\par
+ Certification generation\par
+\par
+ UI hosts handles user internations:\par
+ ==================================\par
+ Access Requests\par
+ Performing Certification\par
+ Dynamic Analatics\par
+\par
+ 257) How to different specify different requests for Batch servers,UI Servers ?\par
+ in iiq.properties files, specify the following hostnames\par
+\par
+environment.taskSchedulerHosts\par
+environment.requestSchedulerHosts\par
+\par
+\par
+\par
+environment.taskSchedulerHosts=HostA,HostB\par
+environment.requestSchedulerHosts=HostA,HostB\par
+\par
+ 258) How many mechanisms IdentiyIQ cube data is going to get created in IdentityIQ cube ?\par
+\par
+ 1.During Data Aggregation:-\par
+ \bullet  By aggregating data from Authoritative Application(s)\par
+\bullet  HR Application\par
+\bullet  Enterprise Directory\par
+\bullet  By aggregating data from Non-authoritative Applications\par
+\bullet  Creates non-authoritative cube (more later)\par
+\par
+Using Lifecycle Manager\par
+\bullet  Using the Create Identity or Self-registration option in Lifecycle\par
+Manager\par
+\bullet  Identity Attributes are entered as part of the creation process\par
+259 What is Group Attribute ?\par
+ 1.Identifies which attribute holds the group attribute\par
+ 2.Used to identify group membership (groupmbr, memberOf)\par
+260) What is extended attributes ?\par
+Additional Identity Attributes are typically defined (called\par
+extended attributes)\par
+\par
+261) What is Manager Correlation\par
+\par
+\par
+\par
+262) Differecet kinds of connector types\par
+delimiter:\par
+\par
+263)What are differnet kind of correlatin methods ?\par
+1.Correlation wizard\par
+2.Correlation rule\par
+3.Manually\par
+\par
+264) What is the benifit of Monioring enable tab in workflows?\par
+this is going to give statistics of workflows failures\par
+265) How to enable monitoring for all workflows?\par
+If you select Identity Initialize, you can find monitoring,if you select Initialize all workflows are going to monitored with stastics\par
+how many no of times , workflows got failured and all.\par
+\par
+<Variable name="transient" initializer="true"/>\par
+\par
+265) What is the difference between Java and BeanShell scripts ?\par
+\par
+IdentityIQ allows system integrators to write rules in the BeanShell scripting language. The BeanShell language\par
+is based on Java and can use all Java classes that are available to IdentityIQ, including custom code.The main\par
+difference between Java and BeanShell is that Java is compiled into byte code, which is executed by the Java\par
+Virtual Machine, while BeanShell scripts are interpreted on executio\par
+\par
+266) how to get\par
+IdentityIQ makes it easy to establish a connection to it's local database: \par
+\par
+Connection dbCxn = context.getJdbcConnection();\par
+267)How to increase workitem justificatin width?\par
+\par
+268) Rule editior won't complile the beanshell script ?\par
+\par
+269) What is the Rule Libraries\par
+A library is a special kind of Rule object. A library collects functions that can be called from other Rule objects.\par
+To use a library in a rule, a function must use the <ReferencedRules/> XML tag.\par
+An example library called "String Utils" could contain the following functions:\par
+\par
+270)How to add Libraries ?\par
+\par
+By adding multiple <Reference/> tags. you can libraries in the rules.\par
+271) System.out.println("Hello, World!"); if you run the command, output will be display ?\par
+\par
+Output sent to standard output, usually ends up in the application server's logfile. In case of Apache Tomcat\par
+this is the catalina.out file.\par
+\par
+278)\par
+\par
+\par
+Comments\par
+\par
+Popular posts from this blog\par
+Sailpoint 182+ Interview Questions\par
+- February 28, 2018\par
+Sailpoint 100+ Interview Questions What is certification ? What are certifications in sailpoint ? What are the lifecylce of certification ?  is it possible to hold certification ? What is rule ? What is pre-iterate ? What is build map rule ? Customized rule ? Pre-delegation rule ? What is access Management ? What is Role  and what is the use of Role ? What are Roles ? What is Identity Mapping ? What is mitigation ? How can we set limit for delete aggregation ? What is Identity risk ? application risk ? What is service account and how you are going to represent ? How many ways, you can initialize variables in workflows? How to debug the workflows ? Enable logging (log files) for sail point How to set debug logger for logger in sail point. How to set Info logger for logger in sail point. What is Application on boarding? How many types extended attributes can increase in sail point ? What are the parameters need to uncomment in iiq.properties file? How many t\par
+READ MORE\par
+Rule ID plug in in sail point\par
+- March 07, 2018\par
+1.Download the plugin from sailpoint {{\field{\*\fldinst{HYPERLINK https://community.sailpoint.com/docs/DOC-9118 }}{\fldrslt{https://community.sailpoint.com/docs/DOC-9118\ul0\cf0}}}}\f1\fs22  2. Download the documentation steps in below location. {{\field{\*\fldinst{HYPERLINK https://community.sailpoint.com/docs/DOC-9048 }}{\fldrslt{https://community.sailpoint.com/docs/DOC-9048\ul0\cf0}}}}\f1\fs22  3.Graphical representation {{\field{\*\fldinst{HYPERLINK https://community.sailpoint.com/docs/DOC-9155 }}{\fldrslt{https://community.sailpoint.com/docs/DOC-9155\ul0\cf0}}}}\f1\fs22\par
+READ MORE\par
+ Powered by Blogger\par
+Theme images by Michael Elkan\par
+SAILPOINTTPOINT\par
+VISIT PROFILE\par
+Archive\par
+Report Abuse\f0\par
+}
+ 

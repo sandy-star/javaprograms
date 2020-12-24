@@ -1,0 +1,6 @@
+id,fname,lname
+1001,John,son
+1002,kamlesh,jain
+1003,Rakesh,jain
+1004,Nitesh,Reddy
+1005,Harinath,Shukla

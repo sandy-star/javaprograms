@@ -1,0 +1,6 @@
+employeeId,firstName,lastName,managerId,fullName,email,department,region,location,inactiveIdentity,jobtitle,costcenter
+
+1a,James,Smith,NULL,James.Smith,James.Smith@demoexample.com,Executive Management,Americas,Austin,FALSE,,"R03, L07, L08, L09"
+
+1a2a,Mary,Johnson,1a,Mary.Johnson,Mary.Johnson@demoexample.com,Regional Operations,Americas,Austin,FALSE,Global Infrastructure Manager,"R03, L07"
+1a2a,Mary,Johnson,1a,Mary.Johnson,sandeppp@example.com,Regional Operations,Americas,Austin,FALSE,Global Infrastructure Manager,"R03, L07"

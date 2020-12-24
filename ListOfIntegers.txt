@@ -1,0 +1,64 @@
+package com;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+public class ListOfIntegers {
+
+	public static void main(String[] args) {
+		  @SuppressWarnings("resource")
+		    Scanner sc = new Scanner(System.in);
+	        System.out.println("enter the values : ");
+	        int size = sc.nextInt();
+	        List<Integer> list = new ArrayList<Integer>();
+	        System.out.println("enter the numbers ");
+	        for(int i =0;i<size;i++){
+	            list.add(sc.nextInt());
+	        }
+	        
+	        System.out.println(noTeen(list));
+	}
+		public static List<Integer> noTeen(List<Integer> nums) {
+			  nums.removeIf(n -> n >= 13 && n <= 19);
+			  return nums;
+	}
+	
+}
+Output:
+enter the values : 
+4
+enter the numbers 
+12
+13
+19
+20
+[12, 20]
+enter the values : 
+3
+enter the numbers 
+1
+14
+1
+[1, 1]
+enter the values : 
+15
+enter the numbers 
+1
+1
+2
+2
+2
+2
+2
+2
+2
+2
+22
+122
+2
+1
+11
+[1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 22, 122, 2, 1, 11]
+
+

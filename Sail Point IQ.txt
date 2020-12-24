@@ -1,0 +1,235 @@
+https://oimtechnicalfront.blog/2017/04/17/integration-of-active-directory-with-sailpoint-iiq7-1-ootb-iiq-connector/
+https://www.interviewgig.com/sailpoint-interview-questions-and-answers/
+https://stackoverflow.com/questions/54442498/how-to-disable-account-of-identity-in-sailpoint-via-java-api
+What is IdentityNow?
+IdentityNow is the Software as a Service offering of Sailpoint’s IdentityIQ.
+IdentityNow helps in user provisioning, single sign-on, and password management.
+What is Application on boarding?
+The process of verifying the connectivity, getting the user data from applications in to the Sail Point IIQ is called Application on boarding.
+eg :- go to -> Application-> Application Defination-> fill the details like Name, Owner, Application Type.
+Goto -> Configuration-> Path Settings fill the details-> go to schema- check for Identity Attribute and Display attribute after that ->preview to check the data is coming form the Target System-> then Come back to Settings-> click on Test Connection. 
+Now go to-> Task-> New Task-> Perform Account Aggregation-> refresh the Identity cube in task.
+If You want to bring all entitlemants from the Target System into Identity IQ Do Perform the ACC-GRP-AGG.
+
+What is Roles:
+Set of Entitlements can be clubbed together to form a role. An Entitlement can be stated as an authorization on a particular system/application.
+How many types of certification are there in Sail point?
+There are 3 major types of certification in Sail Point:
+Application owner Certification.
+Manager Certification.
+Role Composition Certification.
+What is Identity cube?
+Any account from source application is called an Identity after it is aggregated in to the Sail Point IIQ. The entire data of the user such as Identity, Identity Detail and Entitlements combined is referred as an Identity cube.
+What is Native Identity?
+Native Identity is the one which are directly created in the IIQ rather than source or target systems.
+What are lifecycle events?
+All actions which happen in IIQ related to life cycles of an employee is called a life cycle event.
+Types of events:
+Joiner
+Leaver
+Terminate etc
+What is role based access control?
+The process of generating authorizations/accesses to a particular system/application based on the role of the user is called role based access control or RBAC.
+When eve a user joins the firm, what all things is done in sail point for that. What all configurations required?
+Ans:
+Depending on the firm’s processes, if the user has to self-register for any of the access to be requested, that can be done using Sail Point. If not, then the accounts are provisioned automatically once the employee data is aggregated in to the IIQ, which usually has a one day interval.
+What is the difference between capabilities and roles?
+Capabilities are not the correct term. It should be entitlement. Entitlement is the access to a particular system, whereas roles are groups of such accesses.
+Capabilities are given to restrict the access to a user on UI level in the Sail Point IIQ.
+What are different modes of approval?
+Email based or browser based.
+What is role mining? What are different approaches for role mining?
+The process of following either top to bottom based approach or bottom up approach when trying to create a entitlement, role and organization unit is called Role mining.
+What is native change type of life cycle event?
+It enables the option to check whether the change has been done in IIQ or source system.
+What is meant by Host configuration?
+The Host Configuration page is to control current servers which are running an Identity IQ case. It is also called as an Identity IQ group.
+What are bean shell scripts?
+Scripting that is most commonly used in JRE Runtime.
+What are the key drivers of IAM?
+Improved security
+Audit and compliance
+Operational efficiency
+Business enablement
+
+What is a connector?
+Connector is a mediator between Other systems and Sailpoint repository. Connector helps to import data into Sailpoint database from other systems and vice versa.
+Name the main Stages of Identity Life Cycle in typical IDM?
+New User Creation or On boarding
+ Account Maintenance – Password management, Role addition etc.
+ Departing user or termination or Off-boarding
+What does SSO mean?
+Single Sign On is a property of access control of multiple related, but independent software systems. With this property a user logs in with a single user login to gain access to connected systems without being prompted for different usernames or passwords or in some configurations seamlessly sign on to all system.
+How is an organization represented in Sailpoint??
+Organization is represented in Sail point By integrating all the systems / target systems of that particular organization in Sail point
+What is data merging during application configuration? Which applications support the data merging feature?
+Data merging is a connector level feature available in delimited and JDBC type of applications. Multiple entries of data are merged during aggregation. Which columns to be merged and which is the unique identifier needs to be configured.
+Name the important tables of the database for Sailpoint IdentityIQ?
+Spt application etc.
+SailPoint Features: 
+1. Compliance control
+2. Access request management
+3. Automated provisioning
+4. Password management
+5. Identity Governance for files
+6. Role management
+7. Account management
+
+Overview of SailPoint Benefits:
+It’s a reliable platform that delivers on-premises or cloud-based solutions to automate and expedite identity and access management. 
+SailPoint Benefits--
+Streamlined audit and improved security
+Automated user provisioning
+Easy password management
+
+Integration of Active Directory with SailPoint IIQ 7.1
+
+Before to use the provisioning feature of the connector, the IQService must be installed and registered on any Windows system with any of the supported Operating System i.e. Active Directory.
+
+Prerequisite:
+
+For user provisioning through IQService, required that the administrator has the appropriate rights on the Active Directory.
+The Domain Controller should be accessible from the IQService host computer
+To install and register the IQService, perform the following:
+1. Create a directory in which you want to download the service. For example, c:\iqservice.
+2. Extract the IQService.zip archive from the IIQHOME\WEB-INF\bin\win directory of the IdentityIQ.
+3. Run the following command to install a Windows service named IQService.
+
+exe –i
+Check the Service status in Windows machine:
+Goto –>run–> services.msc.
+Look for IQservice
+1
+
+Check the connectivity between Active Directory and the Host machine.
+
+Install Apache studio or any LDAP browser to connect with Active
+Provide connection Details and check Network Parameter.
+2
+
+Provide Credentials for Active Directory User having administrator Rights. Below Screen shows a successful connection and Authentication with Active Directory from Host machine.
+
+4
+
+Post successful Authentication Log into Active Directory lookout for Directory Structure as this would require in configuring the application in next step.
+
+5
+
+Log into Sail point (IIQ) Application
+
+6
+
+Application Configuration
+
+Go to –> Application àApplication Definition
+Add new application
+Provide the Name of the application
+Owner details in the case of approval workflow are there to validate and approve the request before the creation of the
+Revoker Detail to authorize the Account revokes operation.
+7
+
+Provide Details of IQservice Installed on Active Directory Windows machine.
+Default port for IQ service is 5050
+8
+
+Domain configuration Include details of Service /Admin account for communication between the host machine and Active Directory i.e Username, ServerIP, Password, Domain address.
+
+9
+
+Configuration of Account:
+
+This configuration is used for Account Aggregation. This process will fetch account details from input DN of active directory and link them with Identities present in IIQ.
+
+10
+
+Configuration of Group:
+
+This configuration is used for Account Group Aggregation.This process will fetch all groups/entitlement details from given search DN of active directory. These groups will be available in entitlement Catalogue as well post Group Account Aggregation run.
+
+11
+
+After all configuration just clicks on test connection to ensure all configuration are correct.
+
+12
+
+Go to Configuration –> Schema
+Click on Discover Schema –> this will pop up all attribute from Active directory.
+13
+
+In Active Directory Integration, we would require User Accounts as well as groups information.So same step we have to follow to pop group attribute from active Directory.
+
+15
+
+At the bottom of attribute page, Click on Preview tab to check the data structure before running any aggregation in the application.
+Setting up Account Correlation attribute .This is require to link account based on unique attribute.
+In IIQ there are two type of Correction:
+Account Correlation
+Manager Correlation
+Both Account and Manager Correlation can be Attribute based or Condition based.
+
+Attribute Based correlation: It will use the application Account attribute to find the identities based on the attribute value of the IIQ Application.
+
+For Example Application Account attribute “cn” can be used to link/correlate Identity attribute “Username”.
+
+Condition Based Attribute: In some application like “Unix” when there is no identifying attribute exist which can be used to correlate the account with identities. For the root account on Unix typically does not have any identifying attributes that can help when trying to correlate it to an existing identity
+
+Condition based Attribute correlation can be help for correlation Service and Administrator accounts might be handled using condition based correlation
+
+Go to Correlation –> Account correlation
+
+Click on New and Name the Account correlation
+
+Select the Application attribute and Identity attribute (IIQ application) from the drop down list.
+
+Manager Correlation:
+
+Manager correlation is required to link manager based on the attribute defined in target application and attribute in IIQ application.
+
+Map Application Attribute with Identity Attribute for Manager correlation.
+
+Now Application configuration is done and Application is ready for Account aggregation.
+
+Aggregation:
+
+There are two type of Aggregation mainly execute in IIQ Sail point i.e.
+
+Account aggregation
+Account group aggregation
+Account aggregation tasks scan applications configured to work with IdentityIQ, discover users and entitlements on those applications, and, optionally, correlate those users and entitlements with roles
+
+Account group aggregation tasks are used to scan applications and aggregate account groups and application object attributes. These are then used for group certification (either permissions or membership) or for displaying of group information in identity certifications
+
+Configure Account aggregation
+
+Go to Setup à Task
+New Task
+Select Account Aggregation
+Configure it as per below screen.
+Select Application to scan: Select Active Directory Application from the drop
+At the bottom Click in Save and execute
+To check the status of this account aggregation.
+
+Go to –>Setup
+
+Task àTask results –> Active Directory Account Aggregation
+
+Configure Account Group aggregation
+
+Go to Setup –> Task
+New Task
+Select Account Group Aggregation
+Configure it as per below screen.
+Select Application to scan: Select Active Directory Application from the drop
+At the bottom Click in Save and execute
+
+To check the status of this account Group aggregation.
+
+Go to –> Setup
+Task –>Task results —> Active Directory Account Group Aggregation.
+
+Check User details in Identity
+
+To cross check the user Account check this user in Active Directory
+
+
+

@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Workflow PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Workflow explicitTransitions="true" name="my first work flow import workflow">
+  <Description>my first work flow</Description>
+  <Step icon="Start" name="Start" posX="42" posY="45">
+    <Transition to="print hello sail point"/>
+  </Step>
+  <Step icon="Stop" name="Stop" posX="452" posY="38"/>
+  <Step action="script:System.out.println(&quot;Hello Sandeep&quot;);" icon="Default" name="print hello sail point" posX="240" posY="53">
+    <Transition to="Stop"/>
+  </Step>
+</Workflow>

@@ -1,0 +1,9 @@
+EmpId,EmpName,MailId,PhNo
+100,Sandeep Singh,sandeep.singh@gmail.com,9000000000
+101,Venkat Reddy,venkat.reddy@gmail.com,9000000001
+%102,Venkat Pagadala,pagadala11@gmail.com,9000000002
+103,Ravi Singh,ravi.singh@gmail.com,9000000003
+104,Rajesh Singh,rajesh.singh@gmail.com,9000000004
+105,Sham Singh,sham.singh@gmail.com,9000000005
+106,Kiran Singh,kiran.singh@gmail.com,9000000006
+107,Ganesh Adapa,addapa.ganesh@gmail.com,9000000007

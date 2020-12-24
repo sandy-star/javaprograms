@@ -1,0 +1,148 @@
+{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1033{\fonttbl{\f0\fnil\fcharset0 Calibri;}{\f1\fnil Calibri;}}
+{\*\generator Riched20 10.0.19041}\viewkind4\uc1 
+\pard\sa200\sl276\slmult1\f0\fs22\lang9 What is a Role ?\par
+A Role is an object in SailPoint(Bundle) . A role can encapsulate other entitlements within it. It does the provisioning task easier.For Example \f1\endash  When a user joins  a firm he/she needs 3 mandatory entitlements. So we can group together all these in a Single Role.\par
+     What are the benefits of Role ?\par
+      Simplifies Access Request \endash\par
+Assuming all users should have access to 50 Entitlements . Now, the Business Users (The people who raises entitlement request), A person requesting an Entitlement has to know about each entitlements and request all entitlements manually. So instead of requesting 50 entitlements , he/she can simply request the Role.\par
+Within the Role we will encapsulate all 50 entitlements.\par
+Also, in the access request screen the Business User can see the entitlements requested in Role.\par
+       Simplifies Access Reviews \endash\par
+Now suppose a certifier needs to certify these 50 Entitlements. Without Role implementation it would have been a difficult task. He might have accidentally revoked an access which was not required.\par
+The certifier can see details of the Role Composition within the certification.\par
+        Manage Access By Expertise\par
+So in certification process we need to certify 2 things.\par
+A- Who should have the Role ?\par
+B- What is in the Role ?\par
+Suppose a user has a Technical Analyst Role. Now his manager can Certify if the user has correct roles or not. The Role owner can who has more knowledge on System Administration can Certify Role Composition if the Role has correct set of Entitlements. So task is Segregated, this in turn increases efficiency.\par
+In Certifications in IIQ there are 2 types of certification for these \endash\par
+Role Membership and Role Composition certification.\par
+        Code Efficiency \endash\par
+For example \endash  if we have written an, If \endash  Else condition for an entitlement at IF -Else places, instead we have to make a single change in Role,\par
+ADVERTISEMENT\par
+REPORT THIS AD\par
+\par
+ \par
+\par
+        Audit Events can also be easily captured\par
+For Example \endash  We can log when roles are created,updated or Disabled.\par
+ It can also log when should a user receive an assigned role.\par
+    What are different types of Roles in identityiq ?\par
+Organizational Role, Business Role, IT Roles,Entitlement Roles\par
+IdentityIQ Standard Role Model\par
+IdentityIQ Standard Role Model is a 2 TIER Model.\par
+Business Role and IT Role\par
+Business Roles \endash\par
+Most users will interact will Business Roles only. So they are least concern about the underlying entitlements. So while defining Business Roles we should clearly define the Business Role name and the description for that Business Role.\par
+Business Role mostly represents Job Functions or Job Titles (Employee, IT Role).\par
+The Business Role should be clearly understandable because the Business Users will   directly interact with them. Hence from a developers point of view we should specify metadata wihin the Role clearly. For ex-   Description, DisplayName or any other Extended Attribute.\par
+We can directly assigned Roles based on condition or we can request the Roles.\par
+        IT Roles \endash\par
+IT Role \endash  The IT Role will have the grouping of entitlements.\par
+\par
+IdentityIQ will DETECT that the user has IT role when they see that the user has all  the entitlements defined in IT Role Definition.\par
+When we attached Business Roles to IT Roles, the IdentityIQ figures out which            access it should provision to detected Roles.\par
+Understanding Benefits of 2 Tier Model     \par
+Role Re-Use. Same IT Role can be configured under two Business Role. So anytime if there is a change in IT Role, the Business Role will not get affected. The End user who is interacting the Business Role will see the same set.\par
+This is not possible in Single Tier Model.\par
+ \par
+\par
+Role Relationships\par
+Within a Business Role we see 3 types of permissions \endash  \par
+Required \endash  When  a Role is configured as Required Role then it is considered as a mandatory Role. It can be\par
+Permitted \endash  If you have a Role that may or may not be needed with a Required role than you can set that role as permitted. If the role is set as permitted then you can only get that role using access request. It will not be assigned via Refresh Identity Task.\par
+Inherited \endash  Suppose there are 2 Roles. Role A and Role B.Now In the Role A Configuration you have configured that Role A inherits Role B. Now suppose any user gets Role A then he will automatically get Role B and its entitlement.\par
+What is ROLE Mining ? What are the different approaches for Role Mining?\par
+If we want to create Roles based on the data in IdentityIQ then , we can achieve it using Role Mining.\par
+Below are the approaches\par
+IT Role Mining, Entitlement Analysis and Business Role Mining.\par
+IT Role Mining-\par
+Use Case \endash  A company is located in 5 different countries.\par
+Example \endash  Pune,Bangalore,Mumbai.\par
+It has employees of 2 different role profiles. Developer and Testers.\par
+Now, they want to give access to different environments to its employees.\par
+The different environment are DEV,TEST,UAT,PROD.\par
+All these access levels are maintained in a FlatFile application  for ex \endash\par
+Environment Access.\par
+Now all the data is available in SailPoint. Now you are asked to create IT Roles based on JobTitles and Access Levels\par
+I\rquote ll create 2 population.\par
+Jobtitle = Developer\par
+Now If I want to create Roles based on these access levels then it is achievable. In IT Role Mining, I will select the application, it will give me a list of entitlements(DEV,TEST,UAT) of that application. Then I can exclude the entitlements which I do not want.\par
+The output of this role mining will be a table . It will have a list of all entitlements analysis grouped together . You can create an IT Role from here with the specific set of entitlements you want.\par
+IT Role Mining\par
+\par
+Entitlement Analysis\par
+If you want analysis for each individual Entitlement then it is achievable using Entitlement Analysis. In Entitlement Analysis you have to select the entitlement and create roles.\par
+\par
+Below is a sample list of set of Entitlements.\par
+\par
+Entitlement Analysis\par
+\par
+Business Role Mining\par
+Select the identity attribute in the sequence in which you want to mine business roles. So lets say you want list of all Developer\rquote s and Tester\rquote s on the basis of individual location.\par
+\par
+Then you will have to select the Identity attributes in that order.\par
+\par
+So if you have 7 locations. 14 Business roles will be created.\par
+\par
+Business_Role_Mining\par
+\par
+ \par
+\par
+What are the different ways using which we can assign Business Roles ?\par
+\par
+Refresh Identity Task \endash  Based on an assignment rule Business Role would be assigned.\par
+Below options needs to be checked \endash\par
+Refresh assigned, detected roles and promote additional entitlements\par
+Provision assignments\par
+If provision assignments in not checked , then Business Roles would be shown as assigned in IIQ but the entitlement under it will be marked as crossed.\par
+Access Request \endash  The Business Role would be assigned directly. Permitted roles can only be assigned using access request. When you will a Business Role that a permitted role in it, you will see an additional pop up with Optional written on it. Only if you select it the permitted role would be assigned. Permitted role can not be assigned through Refresh Identity Task.\par
+\par
+Batch Request\par
+\par
+Role Membership and Role Composition Certification\par
+As a best practice before assigning any IT Roles to Business Roles , we must 1st verify if the Role Composition is correct.\par
+Role Compostion Certification Functioning \endash\par
+\par
+We can select the roles which we want to verify whether it composition is correct or not. When a certification is ran, An access review is generated. Within the access review we can verify if composition is correct or not.\par
+There are 2 options \endash\par
+\par
+Approve and Revoke \endash  On Revocation a manual workitem is generated to the role owner stating an action to be taken.\par
+ \par
+\par
+Role Provisioning Options- Setting Sunrise and Sunset Dates in Roles\par
+ Roles can be enabled or disabled on any particular day automatically.\par
+ Roles can be assigned or de-assigned on any particular date automatically.\par
+ This concept is called Setting Sunrise and Sunset Dates.\par
+ This can be achieved by enabling below checkboxes \endash\par
+ GlobalSettings \endash  IIQ Configuration \endash  Roles\par
+Sunset_Sunrise_Config\par
+\par
+Open any Business Role and then Configure events under Scheduled Events.\par
+\par
+Role Model Extension \endash\par
+What are the scenarios in which we want to update Role Model ?\par
+BirthRight Roles can be customized roles so that they are not requestable.\par
+\par
+If you want assign capabilities using Roles. You can create Custom Roles and assign            capabilities using those Roles. You can write conditions in assignment rules that                  user with Help Desk JobTitle should get HelpDesk capability.\par
+\par
+What is the use of Entitlement Role Type \endash  Entitlement Role type is for backward                compatibility . It functions exactly as an IT Role.\par
+\par
+Role Model Updation ? How can you update an identity if a Role is updated.\par
+Usecase \endash  You have a Role A. Role A had 2 entitlements Ent1,Ent2.\par
+Now the entitlement Ent1 has been updated. The entitlement is Entv1.\par
+How will you propogate these changes ?\par
+Steps\par
+Enable \endash  Allow Propagation of Role Changes.                                                          Global Settings > IdentityIQ Configuration > Roles > Additional Roles Options \endash  \par
+Update Role Composition\par
+Run Propagate Role Changes task.\par
+ \par
+\par
+When Role Provisioning Policy will be used ? \par
+If we want to set additional attributes in Target System for a Role then we can not create those attributes in AD instead we will create a role provisioning policy.\par
+Also, a Role can have 2 Entitlement in OR condition. For ex- I can request a role and I only want to provision only 1 out of the 2 entitlements. Then I can create a provisioning policy in the Roles.\par
+Kindly note whenever an Access Request is madefor a Role. Both the provisioning policies gets merged in the provisioning policy form. Fields of both the provisionig policies will be visible to the form owner.\par
+ \par
+\par
+}
+ 
