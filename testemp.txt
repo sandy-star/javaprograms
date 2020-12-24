@@ -1,4 +1,0 @@
-id,firstName,lastName,managerid
-1003,Rocky,kumar,1
-1001,Michel,Jakson,2
-1002,Kiran,Reddy,3
